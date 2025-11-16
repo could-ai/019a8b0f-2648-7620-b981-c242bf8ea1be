@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
 import "home_screen.dart";
 import "farmer_login_screen.dart";
+import "admin_login_screen.dart";
+import "signup_screen.dart";
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -55,6 +57,35 @@ class LoginScreen extends StatelessWidget {
                 ),
                 child: const Text("Customer Login"),
               ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AdminLoginScreen()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                  textStyle: const TextStyle(fontSize: 18),
+                ),
+                child: const Text("Admin Login"),
+              ),
+              const SizedBox(height: 20),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SignUpScreen()),
+                  );
+                },
+                child: const Text(
+                  "Don't have an account? Sign In",
+                  style: TextStyle(fontSize: 16),
+                ),
+              )
             ],
           ),
         ),
