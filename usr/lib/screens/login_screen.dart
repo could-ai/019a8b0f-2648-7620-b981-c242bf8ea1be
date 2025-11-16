@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "home_screen.dart";
+import "farmer_login_screen.dart";
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -25,13 +26,15 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 40),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacement(
+                  Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const HomeScreen(userType: "Farmer")),
+                    MaterialPageRoute(
+                        builder: (context) => const FarmerLoginScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                   textStyle: const TextStyle(fontSize: 18),
                 ),
                 child: const Text("Farmer Login"),
@@ -41,11 +44,13 @@ class LoginScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => const HomeScreen(userType: "Customer")),
+                    MaterialPageRoute(
+                        builder: (context) => const HomeScreen(userType: "Customer")),
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                   textStyle: const TextStyle(fontSize: 18),
                 ),
                 child: const Text("Customer Login"),
