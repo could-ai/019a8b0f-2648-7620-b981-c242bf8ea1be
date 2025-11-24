@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'home_screen.dart';
 import 'farmer_login_screen.dart';
 import 'admin_login_screen.dart';
+import 'customer_login_screen.dart';
 import 'farmer_signup_screen.dart';
 import 'customer_signup_screen.dart';
 import 'admin_signup_screen.dart';
@@ -17,7 +18,7 @@ class LoginScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Center(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -46,10 +47,10 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacement(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const HomeScreen(userType: 'Customer')),
+                        builder: (context) => const CustomerLoginScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
